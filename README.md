@@ -118,55 +118,63 @@ Sou **José Willams**, Quality Analyst (QA) especializado em **análise de requi
 ## 📂 Estrutura de Testes e Organização
 
 ```
-test-project-structure/
-├── cypress/
+qa-portfolio/
+├── 📄 QA_PORTFOLIO_REPORT.md        # Portfólio completo e detalhado
+│
+├── 📁 cypress/                       # Framework de testes E2E
 │   ├── e2e/
 │   │   ├── api/                      # Testes de API (REST)
-│   │   │   ├── api_auth.cy.js       # Autenticação OAuth2
-│   │   │   ├── api_crud.cy.js       # CRUD operations
+│   │   │   ├── api_auth.cy.js        # Autenticação OAuth2
+│   │   │   ├── api_crud.cy.js        # CRUD operations
 │   │   │   └── api_integration.cy.js # Testes de integração
-│   │   └── ui/                       # Testes E2E de interface
+│   │   │
+│   │   └── Backoffice/               # Testes E2E de interface
 │   │       ├── user_flows.cy.js
 │   │       └── admin_flows.cy.js
 │   │
-│   ├── fixtures/                     # Test data (JSON, YAML)
-│   │   ├── users.json
-│   │   └── api_responses.json
+│   ├── dataTest/
+│   │   └── data_hml.js               # Dados de teste para HML
+│   │
+│   ├── fixtures/
+│   │   ├── api_endpoints.js          # Endpoints da API
+│   │   └── example.json              # Dados de exemplo
 │   │
 │   ├── support/
 │   │   ├── commands/                 # Custom commands reutilizáveis
-│   │   │   ├── api_commands.js      
-│   │   │   └── ui_commands.js       
-│   │   │
 │   │   └── e2e.js                    # Setup global
 │   │
-│   └── reports/                      # Relatórios de execução
-│       └── mochawesome/
+│   ├── reports/                      # Relatórios de execução
+│   │   └── mochawesome_*.json        # 49 relatórios gerados
+│   │
+│   ├── results/                      # Resultados consolidados
+│   ├── screenshots/                  # Screenshots de falhas
+│   └── videos/                       # Gravações de execução
 │
-├── test-documentation/               # 📋 DOCUMENTAÇÃO DE TESTES
-│   ├── test-cases/                   
-│   │   ├── TC_001_login.md
-│   │   ├── TC_002_crud_news.md
-│   │   └── traceability-matrix.xlsx  # Matriz de rastreabilidade
-│   │
-│   ├── bug-reports/                  # 🐛 RELATÓRIOS DE BUGS
-│   │   ├── BUG_001_validation_error.md
-│   │   ├── BUG_002_data_inconsistency.md
-│   │   └── bug-tracking.xlsx
-│   │
-│   ├── test-strategy/                # 📊 ESTRATÉGIA DE TESTES
-│   │   ├── test-plan.md
-│   │   ├── coverage-analysis.md
-│   │   └── risk-assessment.md
-│   │
-│   └── reports/                      # 📈 RELATÓRIOS DE QUALIDADE
-│       ├── weekly-quality-report.md
-│       ├── release-validation.md
-│       └── metrics-dashboard.xlsx
+├── 📁 docs/                          # 📋 DOCUMENTAÇÃO DE TESTES
+│   ├── RELATORIO_ANALISE_TESTES_15_01_2026.md
+│   ├── RELATORIO_CONSOLIDADO_QA_15_01_2026.md
+│   ├── RELATORIO_CORRECOES_14_01_2026.md
+│   ├── RESUMO_IMPLEMENTACAO_15_01_2026.md
+│   ├── CHECKLIST_IMPLEMENTACAO.md
+│   ├── ARQUITETURA_PROPOSTA.md
+│   ├── PLANO_MELHORIAS_API_ESTEIRA.md
+│   ├── GUIA_RAPIDO_MIGRACAO.md
+│   ├── IMPLEMENTACAO_PROXIMOS_PASSOS.md
+│   └── ANALISE_QA_SENIOR.md
 │
-├── azure-pipelines.yml              # CI/CD Azure DevOps
-├── cypress.config.js                # Configuração do Cypress
-└── README.md                        # Documentação do projeto
+├── 📁 examples/                      # Exemplos de implementação
+│   ├── EXEMPLO_1_REFATORACAO_COMMANDS.js
+│   ├── EXEMPLO_2_TEST_DATA_FACTORY.js
+│   ├── EXEMPLO_3_PAGE_OBJECT_MODEL.js
+│   └── EXEMPLO_4_LOGGER_ERROR_HANDLING.js
+│
+├── 📄 azure-pipelines.yml            # CI/CD Azure DevOps
+├── 📄 cypress.config.js              # Configuração do Cypress
+├── 📄 reporter-config.json           # Config Mochawesome
+├── 📄 package.json                   # Dependências do projeto
+├── 📄 analyze_reports.js             # Script de análise
+├── 📄 validar_correcoes.sh           # Validação de correções
+└── 📄 README.md                      # Documentação do projeto
 ```
 
 ### **Estrutura Organizacional que Implementei:**
@@ -610,20 +618,39 @@ Implementei sistema de métricas de qualidade com dashboards, análise de tendê
 
 ```
 📁 cypress/
-  ├── 📁 e2e/              # Testes automatizados
-  ├── 📁 fixtures/         # Dados de teste
-  ├── 📁 reports/          # 49 relatórios Mochawesome
-  └── 📁 support/          # Comandos customizados
+  ├── 📁 e2e/
+  │   ├── 📁 api/           # Testes de API REST
+  │   └── 📁 Backoffice/    # Testes E2E de interface
+  ├── 📁 dataTest/          # Dados de teste (data_hml.js)
+  ├── 📁 fixtures/          # Fixtures e endpoints
+  ├── 📁 support/           # Comandos customizados
+  ├── 📁 reports/           # 49 relatórios Mochawesome
+  ├── 📁 results/           # Resultados consolidados
+  ├── 📁 screenshots/       # Screenshots de falhas
+  └── 📁 videos/            # Gravações de execução
 
 📁 docs/
-  ├── 📄 RELATORIO_ANALISE_TESTES.md
+  ├── 📄 RELATORIO_ANALISE_TESTES_15_01_2026.md
+  ├── 📄 RELATORIO_CONSOLIDADO_QA_15_01_2026.md
+  ├── 📄 RELATORIO_CORRECOES_14_01_2026.md
+  ├── 📄 RESUMO_IMPLEMENTACAO_15_01_2026.md
   ├── 📄 CHECKLIST_IMPLEMENTACAO.md
   ├── 📄 ARQUITETURA_PROPOSTA.md
-  └── 📄 RELATORIO_CONSOLIDADO_QA.md
+  ├── 📄 PLANO_MELHORIAS_API_ESTEIRA.md
+  └── 📄 ANALISE_QA_SENIOR.md
 
+📁 examples/
+  ├── 📄 EXEMPLO_1_REFATORACAO_COMMANDS.js
+  ├── 📄 EXEMPLO_2_TEST_DATA_FACTORY.js
+  ├── 📄 EXEMPLO_3_PAGE_OBJECT_MODEL.js
+  └── 📄 EXEMPLO_4_LOGGER_ERROR_HANDLING.js
+
+📄 QA_PORTFOLIO_REPORT.md # Portfolio detalhado
 📄 cypress.config.js      # Configuração Cypress
 📄 azure-pipelines.yml    # Pipeline CI/CD
 📄 reporter-config.json   # Config Mochawesome
+📄 analyze_reports.js     # Script de análise
+📄 package.json           # Dependências
 ```
 
 ---
