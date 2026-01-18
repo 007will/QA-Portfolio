@@ -1,0 +1,18 @@
+{
+  "name": "business-directory-qa-portfolio",
+  "version": "1.0.0",
+  "description": "Quality Analyst Portfolio - Test Analysis & Documentation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/007will/QA-Portfolio.git"
+  },
+  "license": "ISC",
+  "author": "José Willams",
+  "type": "commonjs",
+  "main": "index.js",
+  "keywords": ["qa", "testing", "quality-assurance", "api-testing", "documentation"],
+  "scripts": {
+    "test": "echo 'Portfolio project - no tests configured'",
+    "docs": "echo 'See README.md for documentation'"
+  }
+}
