@@ -111,9 +111,6 @@ Sou **José Willams**, Quality Analyst (QA) especializado em **análise de requi
    ├─ Verificação de payloads multipart/form-data
    └─ Testes em 4 ambientes distintos (HML)
 ```
-```
-
----
 
 ## 📂 Estrutura de Testes e Organização
 
